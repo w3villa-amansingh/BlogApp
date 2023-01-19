@@ -3,4 +3,5 @@ class Article < ApplicationRecord
     validates :title, presence: true
     validates :description, presence: true
     validates_uniqueness_of :title
+    #self.per_page = 3
 end

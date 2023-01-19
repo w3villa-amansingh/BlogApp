@@ -3,7 +3,9 @@ before_action :find_by,only: %i[show edit destroy update ]
 before_action :require_user, except: [:show, :index]
 
   def index
-    @article = Article.all
+   
+    @articles =current_user.articles .paginate(page: params[:page], per_page: 3)
+
   end
 
   
