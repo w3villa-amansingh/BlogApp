@@ -2,12 +2,15 @@ class UsersController < ApplicationController
     before_action :require_user, only: [:edit, :update]
     before_action :find_id, only: [:show, :edit, :update]
     def show
-        
+        @user=User.find(params[:id])
         @article = @user.articles
+        @users=User.all
     end
 
     def index
         @users=User.all
+        
+   
     end
 
     def new
